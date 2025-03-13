@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import '../models/car.dart';
 import 'car_detail_screen.dart';
-
+import 'loading_screen.dart';
 class CarListScreen extends StatelessWidget {
   const CarListScreen({super.key});
 
@@ -18,7 +18,7 @@ class CarListScreen extends StatelessWidget {
               Navigator.push(
                 context,
                 MaterialPageRoute(
-                  builder: (context) => CarDetailScreen(car: car),
+                  builder: (context) => LoadingScreen(),
                 ),
               );
             },
