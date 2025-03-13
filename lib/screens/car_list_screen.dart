@@ -1,7 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:taxiapp2/constants/colors.dart';
 import '../models/car.dart';
 import 'car_detail_screen.dart';
 import 'bloom_loading.dart';
+import 'constants/colors.dart';
+
+
 class CarListScreen extends StatelessWidget {
   const CarListScreen({super.key});
 
@@ -58,7 +62,7 @@ class CarListScreen extends StatelessWidget {
                                 style: TextStyle(
                                   fontSize: 16,
                                   fontWeight: FontWeight.w500,
-                                  color: Colors.green,
+                                  color: AppColors.grayishBlue,
                                 ),
                               ),
                             ],
@@ -70,19 +74,37 @@ class CarListScreen extends StatelessWidget {
                           Row(
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
-                              Text("Seats: ${car.seats}"),
+                              Row(
+                                children: [
+                                  Image.asset('assets/images/timer.png', width: 20, height: 20), // Car icon image
+                                  SizedBox(width: 5),
+                                  Text("${car.seats} min"),
+                                ],
+                              ),
                               Container(
                                 width: 1, // Vertical line width
                                 height: 20,
                                 color: Colors.grey, // Line color
                               ),
-                              Text("Pass: ${car.passengers}"),
+                               Row(
+                                children: [
+                                  Image.asset('assets/images/seats.png', width: 20, height: 20), // Car icon image
+                                  SizedBox(width: 5),
+                                  Text("${car.seats} seats"),
+                                ],
+                              ),
                               Container(
                                 width: 1,
                                 height: 20,
                                 color: Colors.grey,
                               ),
-                              Text(car.type),
+                               Row(
+                                children: [
+                                  Image.asset('assets/images/clock.png', width: 20, height: 20), // Car icon image
+                                  SizedBox(width: 5),
+                                  Text("${car.time} "),
+                                ],
+                              ),
                             ],
                           ),
                         ],
